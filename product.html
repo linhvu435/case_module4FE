@@ -858,16 +858,16 @@
                                     <!-- Reviews Field Start
                                     rv cua user -->
                                     <div class="riview-field mt-40">
-                                        <form autocomplete="off" action="">
+                                        <form autocomplete="off" action="" >
                                             <div class="form-group">
-                                                <label class="req" for="sure-name">Nickname</label>
+                                                <label class="req" for="sure-name">Tên người dùng</label>
                                                 <input type="text" class="form-control" id="sure-name" required="required">
                                             </div>
                                             <div class="form-group">
-                                                <label class="req" for="comments">Review</label>
-                                                <textarea class="form-control" rows="5" id="comments" required="required"></textarea>
+                                                <label class="req" for="comments">Đánh giá </label>
+                                                <textarea class="form-control" rows="5" id="comments"></textarea>
                                             </div>
-                                            <button type="submit" class="customer-btn" id="review-user">Gửi đánh giá </button>
+                                            <button type="submit" class="customer-btn" id="review-user" onclick="saveComment()" >Gửi đánh giá </button>
                                         </form>
                                     </div>
                                     <!-- Reviews Field Start -->
