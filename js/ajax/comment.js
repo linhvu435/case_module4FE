@@ -4,8 +4,42 @@ function saveComment(){
 
         console.log(content)
 
+        let idUser
+    
+        let nameProduct = document.getElementById("product-to-add")
+
+        let idProduct
+
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8080/comments",
+            success: function (data){
+                for (let i = 0; i< data.length; i++){
+                    if (nameProduct == data[i].name){
+                                idProduct = data[i].id
+                    }
+                }
+            }
+        })
+
+
+
+
+         if ( typeof(Storage) !== 'undefined') {
+             // khoi tao session
+
+             sessionStorage.setItem("idUserName",1)
+             // lay session
+
+
+                idUser = sessionStorage.getItem("idUserName")
+
+         }
+
         let reviews = {
-            "text": content
+             "id_account": idUser,
+            "text": content,
+            "id_product": idProduct
         }
 
         $.ajax({
@@ -17,7 +51,7 @@ function saveComment(){
             },
             data: JSON.stringify(reviews),
             success: function () {
-                alert("succesfully comment")
+                alert("successfully comment")
             },
             error: function (error) {
                 alert("error comment")
@@ -25,6 +59,40 @@ function saveComment(){
 
         })
 }
+
+function showComment(){
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:8080/products",
+        success: function (data){
+            let str = ""
+            for (let i = 0; i< data.length ; i++){
+                str += `<h1>${data[i].username}</h1>
+                        <ul>
+                        <h5>${data[i].text}</h5>
+                        <li>${}</li>
+                            
+                        </ul>
+                `
+            }
+        }
+
+    })
+}
+
+
+// function showRating(){
+//     $.ajax({
+//         type: "Get",
+//         url: "http://localhost:8080/stars",
+//         success: function (data){
+//
+//
+//
+//             }
+//         }
+//     })
+// }
 
 
 

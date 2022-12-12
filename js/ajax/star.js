@@ -17,7 +17,7 @@ function saveStar(star){
         },
         data: JSON.stringify(countStar),
         success: function () {
-            alert("succesfully star")
+            alert("successfully star")
             let hidden = document.querySelector('#stars')
             hidden.style.visibility = 'hidden'
         },
