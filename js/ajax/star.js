@@ -17,7 +17,11 @@ function saveStar(star){
         },
         data: JSON.stringify(countStar),
         success: function () {
+<<<<<<< HEAD
             alert("successfully star")
+=======
+            alert("succesfully star")
+>>>>>>> fc9220b (day1)
             let hidden = document.querySelector('#stars')
             hidden.style.visibility = 'hidden'
         },

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function saveComment(){
 
         let content = document.getElementById("comments").value
@@ -54,10 +55,29 @@ function saveComment(){
                 alert("successfully comment")
             },
             error: function (error) {
+=======
+$(document).ready(()=> {
+    $("#review-user").click(() => {
+        let content = $("#comments").val()
+
+        let reviews ={
+            "text": content
+        }
+
+        $.ajax({
+            type:"POST",
+            url: "http://localhost:8080/comment",
+            data: JSON.stringify(reviews),
+            success: function () {
+                alert("succesfully comment")
+            },
+            error: function (error){
+>>>>>>> fc9220b (day1)
                 alert("error comment")
             }
 
         })
+<<<<<<< HEAD
 }
 
 // function showComment(){
@@ -94,6 +114,13 @@ function saveComment(){
 //     })
 // }
 
+=======
+
+    })
+
+
+})
+>>>>>>> fc9220b (day1)
 
 
 
