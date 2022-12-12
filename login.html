@@ -37,6 +37,7 @@
 
     <!-- Modernizer js -->
     <script src="js\vendor\modernizr-3.5.0.min.js"></script>
+    <script src="js/login,register/login.js"></script>
 </head>
 
 <body>
@@ -690,15 +691,15 @@
                                 <p class="mb-10"><strong>I am a returning customer</strong></p>
                                 <form action="#">
                                     <div class="form-group">
-                                        <label>Email</label>
-                                        <input type="text" name="email" placeholder="Enter your email address..." id="input-email" class="form-control">
+                                        <label>Username</label>
+                                        <input type="text" name="userNane" placeholder="Enter userName..." id="userName" class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label>Password</label>
-                                        <input type="text" name="pass" placeholder="Password" id="input-password" class="form-control">
+                                        <input type="text" name="pass" placeholder="Password" id="passWord" class="form-control">
                                     </div>
                                     <p class="lost-password"><a href="forgot-password.html">Forgot password?</a></p>
-                                    <input type="submit" value="Login" class="return-customer-btn">
+                                    <input onclick="login()" type="submit" value="Login" class="return-customer-btn">
                                 </form>
                             </div>
                         </div>
