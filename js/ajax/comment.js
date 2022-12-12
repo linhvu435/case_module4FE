@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 function saveComment(){
 
         let content = document.getElementById("comments").value
@@ -55,30 +55,35 @@ function saveComment(){
                 alert("successfully comment")
             },
             error: function (error) {
-=======
+                alert("error comment")
+            }
+        })
+}
+
 $(document).ready(()=> {
     $("#review-user").click(() => {
         let content = $("#comments").val()
 
-        let reviews ={
+        let reviews = {
             "text": content
         }
 
         $.ajax({
-            type:"POST",
+            type: "POST",
             url: "http://localhost:8080/comment",
             data: JSON.stringify(reviews),
             success: function () {
                 alert("succesfully comment")
             },
-            error: function (error){
->>>>>>> fc9220b (day1)
+            error: function (error) {
+
                 alert("error comment")
             }
 
         })
-<<<<<<< HEAD
-}
+
+    })
+})
 
 // function showComment(){
 //     $.ajax({
@@ -114,13 +119,6 @@ $(document).ready(()=> {
 //     })
 // }
 
-=======
-
-    })
-
-
-})
->>>>>>> fc9220b (day1)
 
 
 
