@@ -4,13 +4,15 @@ function register(){
     let address=$("#address").val();
     let phoneNumber=$("#phoneNumber").val();
     let email=$("#email").val();
+    let roles =$("#roles").val();
 
     let account={
         userName:userName,
         passWord:passWord,
         address:address,
         phoneNumber:phoneNumber,
-        email:email
+        email:email,
+        roles:{id: roles}
     }
     $.ajax({
         type: "POST",
@@ -81,7 +83,7 @@ function checkPassWord() {
     let passWord = document.getElementById("passWord").value;
     let confirmpassword = document.getElementById("confirmpassword").value;
     if (passWord!=confirmpassword){
-        document.getElementById("register-err").innerHTML = `  <p style="filter: brightness(120%)" id="messageFailed" class="small-font text-uppercase text-center py-2 text-danger bg-danger-light2 ">"Passwords do not match!</p>`
+        document.getElementById("confirmpassword").innerHTML = `  <p style="filter: brightness(120%)" id="messageFailed" class="small-font text-uppercase text-center py-2 text-danger bg-danger-light2 ">"Passwords do not match!</p>`
     }
 }
 
