@@ -699,7 +699,7 @@
                                 <div class="form-group d-md-flex align-items-md-center">
                                     <label class="control-label col-md-2" for="phoneNumber"><span class="require">*</span>Telephone</label>
                                     <div class="col-md-10">
-                                        <input type="email" class="form-control" id="phoneNumber" placeholder="Telephone">
+                                        <input  class="form-control" id="phoneNumber" placeholder="Telephone">
                                     </div>
                                 </div>
                             </fieldset>
@@ -714,13 +714,22 @@
                                 <div class="form-group d-md-flex align-items-md-center">
                                     <label class="control-label col-md-2" for="confirmpassword"><span class="require">*</span>Confirm Password</label>
                                     <div class="col-md-10">
-                                        <input type="password" class="form-control" id="confirmpassword" placeholder="Confirm password">
+                                        <input type="password" class="form-control" id="confirmpassword" oninput="checkPassWord()" placeholder="Confirm password">
                                     </div>
                                 </div>
                                 <div class="form-group d-md-flex align-items-md-center">
                                     <label class="control-label col-md-2" for="address"><span class="require">*</span>Address</label>
                                     <div class="col-md-10">
-                                        <input type="password" class="form-control" id="address" placeholder="Confirm address">
+                                        <input  class="form-control" id="address" placeholder="Confirm address">
+                                    </div>
+                                </div>
+                                <div class="form-group d-md-flex align-items-md-center">
+                                    <label class="control-label col-md-2" for="address"><span class="require">*</span>Choose Role</label>
+                                    <div class="col-md-10">
+                                      <select class="form-control" id="roles">
+                                          <option value="3">Shop</option>
+                                          <option value="2">Customer</option>
+                                      </select>
                                     </div>
                                 </div>
                             </fieldset>
