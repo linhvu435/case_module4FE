@@ -60,25 +60,25 @@ function saveComment(){
         })
 }
 
-function showComment(){
-    $.ajax({
-        type: "GET",
-        url: "http://localhost:8080/products",
-        success: function (data){
-            let str = ""
-            for (let i = 0; i< data.length ; i++){
-                str += `<h1>${data[i].username}</h1>
-                        <ul>
-                        <h5>${data[i].text}</h5>
-                        <li>${}</li>
-                            
-                        </ul>
-                `
-            }
-        }
-
-    })
-}
+// function showComment(){
+//     $.ajax({
+//         type: "GET",
+//         url: "http://localhost:8080/products",
+//         success: function (data){
+//             let str = ""
+//             for (let i = 0; i< data.length ; i++){
+//                 str += `<h1>${data[i].username}</h1>
+//                         <ul>
+//                         <h5>${data[i].text}</h5>
+//                         <li>${}</li>
+//
+//                         </ul>
+//                 `
+//             }
+//         }
+//
+//     })
+// }
 
 
 // function showRating(){
