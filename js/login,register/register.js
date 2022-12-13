@@ -1,18 +1,18 @@
-function register(){
+function register() {
     let userName = $("#userName").val();
     let passWord = $("#passWord").val();
-    let address=$("#address").val();
-    let phoneNumber=$("#phoneNumber").val();
-    let email=$("#email").val();
-    let roles =$("#roles").val();
+    let address = $("#address").val();
+    let phoneNumber = $("#phoneNumber").val();
+    let email = $("#email").val();
+    let roles = $("#roles").val();
 
-    let account={
-        userName:userName,
-        passWord:passWord,
-        address:address,
-        phoneNumber:phoneNumber,
-        email:email,
-        roles:{id: roles}
+    let account = {
+        userName: userName,
+        passWord: passWord,
+        address: address,
+        phoneNumber: phoneNumber,
+        email: email,
+        roles: {id: roles}
     }
     $.ajax({
         type: "POST",
@@ -34,7 +34,6 @@ function register(){
         }
     })
 }
-
 function checkUser() {
     let userName = document.getElementById("userName").value;
     $.ajax({
@@ -52,7 +51,7 @@ function checkUser() {
         success: function (data) {
         },
         error() {
-            document.getElementById("register-err").innerHTML = `  <p style="filter: brightness(120%)" id="messageFailed" class="small-font text-uppercase text-center py-2 text-danger bg-danger-light2 ">"Account already exists!</p>`
+            document.getElementById("userName-err").innerHTML = `  <p style="filter: brightness(120%)" id="messageFailed" class="small-font text-uppercase text-center py-2 text-danger bg-danger-light2 ">Trùng UserName Rồi</p>`
 
         }
     })
@@ -74,7 +73,7 @@ function checkMail() {
         success: function (data) {
         },
         error() {
-            document.getElementById("register-err").innerHTML = `  <p style="filter: brightness(120%)" id="messageFailed" class="small-font text-uppercase text-center py-2 text-danger bg-danger-light2 ">"Email already exists!</p>`
+            document.getElementById("email-err").innerHTML = `  <p style="filter: brightness(120%)" id="messageFailed" class="small-font text-uppercase text-center py-2 text-danger bg-danger-light2 ">Trùng email rồi</p>`
 
         }
     })
@@ -82,43 +81,44 @@ function checkMail() {
 function checkPassWord() {
     let passWord = document.getElementById("passWord").value;
     let confirmpassword = document.getElementById("confirmpassword").value;
-    if (passWord!=confirmpassword){
-        document.getElementById("confirmpassword").innerHTML = `  <p style="filter: brightness(120%)" id="messageFailed" class="small-font text-uppercase text-center py-2 text-danger bg-danger-light2 ">"Passwords do not match!</p>`
+    if (passWord == confirmpassword) {
+        document.getElementById("pass-err").innerHTML = ""
+    }else {
+        document.getElementById("pass-err").innerHTML = `  <p style="filter: brightness(120%)" class="small-font text-uppercase text-center py-2 text-danger bg-danger-light2 ">"Passwords do not match!</p>`
+    }if (confirmpassword == ""){
+        document.getElementById("pass-err").innerHTML = ""
+
     }
 }
 
 
 
 
-
-// let userName =document.querySelector('#userName')
-// let passWord =document.querySelector('#passWord ')
-// let confirmpassword =document.querySelector('#confirmpassword')
-// let address =document.querySelector('#address')
-// let phoneNumber=document.querySelector('#phoneNumber')
-// let email=document.querySelector('#email')
-// let form =document.querySelector('#form')
-// function showError(input,message){
-//     let parent = input.parentElement;
-//     let small = parent.querySelector('#small');
-//     parent.classList.add('error');
-//     small.innerText = message;
-// }
-// function showSuccess(input){
-//     let parent = input.parentElement;
-//     let small = parent.querySelector('#small');
-//     parent.classList.add('error');
-//     small.innerText = "";
-// }
-// function checkEmptyError(){
-//
-//     listInput.forEach(input =>{
-//         input.value.trim()
-//         if (!input.value){
-//             showError(input,'Không được bỏ trống')
-//         }else {
-//             showSuccess(input)
-//         }
-//     });
-//
-// }
+function checkTrong() {
+    let userName = document.getElementById("userName").value;
+    let passWord = document.getElementById("passWord").value;
+    let confirmpassword = document.getElementById("confirmpassword").value;
+    let address = document.getElementById("address").value;
+    let phoneNumber = document.getElementById("phoneNumber").value;
+    let email = document.getElementById("email").value;
+    let roles = document.getElementById("roles").value;
+    if (userName ===""&&passWord === ""&&confirmpassword === ""&&address === ""&&phoneNumber === ""&&email === ""&& roles === ""){
+        document.getElementById("checktrong1").innerHTML=` <p class="btn-danger" style="color: white">Khong được bo trống ô trên</p>`
+        document.getElementById("checktrong2").innerHTML=` <p class="btn-danger" style="color: white">Khong được bor trống ô trên</p>`
+        document.getElementById("checktrong3").innerHTML=` <p class="btn-danger" style="color: white">Khong được bor trống ô trên</p>`
+        document.getElementById("checktrong4").innerHTML=` <p class="btn-danger" style="color: white">Khong được bor trống ô trên</p>`
+        document.getElementById("checktrong5").innerHTML=` <p class="btn-danger" style="color: white">Khong được bo trống ô trên</p>`
+        document.getElementById("checktrong6").innerHTML=` <p class="btn-danger" style="color: white">Khong được bo trống ô trên</p>`
+        document.getElementById("checktrong7").innerHTML=` <p class="btn-danger" style="color: white">Khong được bo trống ô trên</p>`
+   return true
+    }else {
+        return false;
+    }
+}
+function dangki() {
+if (checkTrong()){
+    checkTrong()
+} else {
+    register();
+}
+}

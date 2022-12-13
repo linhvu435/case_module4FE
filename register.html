@@ -38,6 +38,7 @@
     <!-- Modernizer js -->
     <script src="js\vendor\modernizr-3.5.0.min.js"></script>
     <script src="js/login,register/register.js"></script>
+
 </head>
 
 <body>
@@ -680,26 +681,34 @@
                 <!-- Row End -->
                 <div class="row">
                     <div class="col-sm-12">
-                        <form class="form-register" action="#">
+                        <form class="form-register">
                             <fieldset>
                                 <legend>Your Personal Details</legend>
 
                                 <div class="form-group d-md-flex align-items-md-center">
                                     <label class="control-label col-md-2" for="userName"><span class="require">*</span>User Name</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="userName" placeholder="Nhập User Name">
+                                        <input type="text" class="form-control" id="userName" placeholder="Nhập User Name" required oninput="checkUser()">
                                     </div>
+                                </div>
+                                <div class="form-group d-md-flex align-items-md-center">
+                                    <label ></label>
+                                    <div class="col-md-10" id="userName-err"></div>
                                 </div>
                                 <div class="form-group d-md-flex align-items-md-center">
                                     <label class="control-label col-md-2" for="email"><span class="require">*</span>Enter you email address here...</label>
                                     <div class="col-md-10">
-                                        <input type="email" class="form-control" id="email" placeholder="Enter you email address here...">
+                                        <input type="email" class="form-control" id="email" placeholder="Enter you email address here..." required oninput="checkMail()">
                                     </div>
+                                </div>
+                                <div class="form-group d-md-flex align-items-md-center">
+                                    <label ></label>
+                                    <div class="col-md-10" id="email-err"></div>
                                 </div>
                                 <div class="form-group d-md-flex align-items-md-center">
                                     <label class="control-label col-md-2" for="phoneNumber"><span class="require">*</span>Telephone</label>
                                     <div class="col-md-10">
-                                        <input  class="form-control" id="phoneNumber" placeholder="Telephone">
+                                        <input  class="form-control" id="phoneNumber" placeholder="Telephone" required>
                                     </div>
                                 </div>
                             </fieldset>
@@ -708,19 +717,23 @@
                                 <div class="form-group d-md-flex align-items-md-center">
                                     <label class="control-label col-md-2" for="passWord"><span class="require">*</span>Password:</label>
                                     <div class="col-md-10">
-                                        <input type="password" class="form-control" id="passWord" placeholder="Password">
+                                        <input type="password" class="form-control" id="passWord" placeholder="Password" required oninput="checkPassWord()">
                                     </div>
                                 </div>
                                 <div class="form-group d-md-flex align-items-md-center">
                                     <label class="control-label col-md-2" for="confirmpassword"><span class="require">*</span>Confirm Password</label>
                                     <div class="col-md-10">
-                                        <input type="password" class="form-control" id="confirmpassword" oninput="checkPassWord()" placeholder="Confirm password">
+                                        <input type="password" class="form-control" id="confirmpassword"  placeholder="Confirm password" required oninput="checkPassWord()">
                                     </div>
+                                </div>
+                                <div class="form-group d-md-flex align-items-md-center">
+                                    <label ></label>
+                                    <div class="col-md-10" id="pass-err"></div>
                                 </div>
                                 <div class="form-group d-md-flex align-items-md-center">
                                     <label class="control-label col-md-2" for="address"><span class="require">*</span>Address</label>
                                     <div class="col-md-10">
-                                        <input  class="form-control" id="address" placeholder="Confirm address">
+                                        <input  class="form-control" id="address" placeholder="Confirm address" required>
                                     </div>
                                 </div>
                                 <div class="form-group d-md-flex align-items-md-center">
@@ -747,7 +760,7 @@
                                 <div class="float-md-right">
                                     <span>I have read and agree to the <a href="#" class="agree"><b>Privacy Policy</b></a></span>
                                     <input type="checkbox" name="agree" value="1"> &nbsp;
-                                    <input onclick="register()" type="submit" value="Continue" class="return-customer-btn">
+                                    <input onclick="dangki()" type="submit" value="Continue" class="return-customer-btn">
                                 </div>
                             </div>
                         </form>
