@@ -76,13 +76,15 @@ function showData(pageable) {
                                                 <div class="pro-info">
                                                     <h4><a href="">${arrProduct[i].name}</a></h4>
                                                     <p><span class="price">${arrProduct[i].price}</span><del class="prev-price">$400.50</del></p>
+                                               
                                                     <div class="label-product l_sale">30<span class="symbol-percent">%</span></div>
                                                 </div>
                                                 <div class="pro-actions">
                                                    <div class="actions-secondary">
                                                    <a><div style="text-align: center">
-                      <a> <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#exampleModal" onclick="showEdit(${arrProduct[i].id})">
-                            Edit Product
+                      <a> <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#exampleModal"  onclick="putInCart('${arrProduct[i].id}','${arrProduct[i].name}',
+                      '${arrProduct[i].img}','${arrProduct[i].price}')">
+                            Add To Cart
                         </button>
                     </div>
                    
@@ -130,5 +132,49 @@ function showData(pageable) {
     //         <span>${pageable.number + 1}</span>/<span>${pageable.totalPages}</span>
     //         <button onclick="getData(${pageable.number + 1})">Next</button>`
     return str;
+
+}
+
+//gio hang
+class Product {
+    id;
+    name;
+    img;
+    price;
+
+
+    constructor(id,name,img,price) {
+        this.id = id;
+        this.name = name;
+        this.img = img;
+        this.price = price;
+
+    }
+}
+
+// let ProductList = JSON.parse(localStorage.getItem("ProductList"));
+let ProductList = []
+function putInCart(id,name,img,price){
+    let buy = new Product(id,name,img,price)
+    ProductList.push(buy);
+    console.log(ProductList)
+    localStorage.setItem("ProductList",JSON.stringify(ProductList))
+}
+
+
+function buyProduct(){
+
+    $.ajax({
+        type: "POST",
+        url: "http://localhost:8080/products",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        data: JSON.stringify(ProductList),
+        success: function () {
+
+        }
+    });
 
 }

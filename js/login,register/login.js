@@ -28,7 +28,7 @@ function login() {
         //xử lý khi thành công
         success: function (data) {
             localStorage.setItem("token", data);
-            location.href = "index.html"
+            location.href = "shopUser.html"
             alert("Đăng nhập thành công")
         },
         error: function (err) {
