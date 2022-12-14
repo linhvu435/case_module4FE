@@ -1,54 +1,26 @@
 
-function saveComment(){
 
-        let content = document.getElementById("comments").value
+document.getElementById("user-name-login").innerHTML = localStorage.getItem("username") + '<i class="lnr lnr-user"></i>'
 
-        console.log(content)
+document.getElementById("sure-name").innerHTML  = localStorage.getItem("username")
 
-        let idUser
-    
-        let nameProduct = document.getElementById("product-to-add")
-
-        let idProduct
-
-        $.ajax({
-            type: "GET",
-            url: "http://localhost:8080/comments",
-            success: function (data){
-                for (let i = 0; i< data.length; i++){
-                    if (nameProduct == data[i].name){
-                                idProduct = data[i].id
-                    }
-                }
-            }
-        })
-
-
-
-
-         if ( typeof(Storage) !== 'undefined') {
-             // khoi tao session
-
-             sessionStorage.setItem("idUserName",1)
-             // lay session
-
-
-                idUser = sessionStorage.getItem("idUserName")
-
-         }
+$(document).ready(()=> {
+    $("#review-user").click(() => {
+        let content = $("#comments").val()
+        let idUser = localStorage.getItem("id_user")
 
         let reviews = {
-             "id_account": idUser,
-            "text": content,
-            "id_product": idProduct
+            id_account: idUser,
+            text: content
         }
 
         $.ajax({
             type: "POST",
             url: "http://localhost:8080/comments",
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                // 'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                "Authorization": "Bearer " + localStorage.getItem('token')
             },
             data: JSON.stringify(reviews),
             success: function () {
@@ -57,53 +29,32 @@ function saveComment(){
             error: function (error) {
                 alert("error comment")
             }
-        })
-}
-
-$(document).ready(()=> {
-    $("#review-user").click(() => {
-        let content = $("#comments").val()
-
-        let reviews = {
-            "text": content
-        }
-
-        $.ajax({
-            type: "POST",
-            url: "http://localhost:8080/comment",
-            data: JSON.stringify(reviews),
-            success: function () {
-                alert("succesfully comment")
-            },
-            error: function (error) {
-
-                alert("error comment")
-            }
 
         })
 
     })
 })
 
-// function showComment(){
-//     $.ajax({
-//         type: "GET",
-//         url: "http://localhost:8080/products",
-//         success: function (data){
-//             let str = ""
-//             for (let i = 0; i< data.length ; i++){
-//                 str += `<h1>${data[i].username}</h1>
-//                         <ul>
-//                         <h5>${data[i].text}</h5>
-//                         <li>${}</li>
-//
-//                         </ul>
-//                 `
-//             }
-//         }
-//
-//     })
-// }
+
+function showComment(){
+    $.ajax({
+        type: " GET ",
+        url: "http://localhost:8080/comments",
+        success: function (data){
+            let str = "";
+            for (let i = 0; i <data.length ; i++) {
+                str += `<tr>
+                        <li>
+                             <h5>${data[i].text}</h5>
+                           </li>
+                           <br>
+</tr>`
+            }
+            document.getElementById("content-user").innerHTML = str
+        }
+    })
+}
+showComment()
 
 
 // function showRating(){

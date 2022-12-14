@@ -34,9 +34,15 @@
     <link rel="stylesheet" href="style.css">
     <!-- Responsive css -->
     <link rel="stylesheet" href="css\responsive.css">
+    <link rel="stylesheet" href="main.css">
 
     <!-- Modernizer js -->
     <script src="js\vendor\modernizr-3.5.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="stomp.js"></script>
+    <script src="app.js"></script>
+    <script src="/app.js"></script>
+
 </head>
 
 <body>
@@ -109,7 +115,7 @@
                                 <!-- Dropdown Start -->
                                 <ul class="ht-dropdown">
                                     <li><a href="login.html">Login</a></li>
-                                    <li><a href="register.html">Register</a></li>
+                                    <li><a href="home.html" onclick="logout()">Logout</a></li>
                                 </ul>
                                 <!-- Dropdown End -->
                             </li> 
@@ -126,7 +132,7 @@
                     <div class="row align-items-center no-gutters">
                         <div class="col-lg-3 col-md-12">
                             <div class="logo mb-all-30">
-                                <a href="index.html"><img src="img\logo\logo.png" alt="logo-image"></a>
+                                <a href="home.html"><img src="img\logo\logo.png" alt="logo-image"></a>
                             </div>
                         </div>
                         <!-- Categorie Search Box Start Here -->
@@ -225,9 +231,13 @@
                                     </li>
                                     <li><a href="#"><i class="lnr lnr-heart"></i><span class="my-cart"><span>Wish</span><span>list (0)</span></span></a>
                                     </li>
-                                    <li><a href="#"><i class="lnr lnr-user"></i><span class="my-cart"><span> <strong>Sign in</strong> Or</span><span> Join My Site</span></span></a>
 
+                                    <li >
+                                        <a href="blog.html">
+                                            <h5 id="user-name-login">
 
+                                            </h5>
+                                        </a>
 
                                     </li>
                                 </ul>
@@ -250,17 +260,17 @@
                         <div class="col-xl-9 col-lg-8 col-md-12 ">
                             <nav class="d-none d-lg-block">
                                 <ul class="header-bottom-list d-flex">
-                                    <li class="active"><a href="index.html">home<i class="fa fa-angle-down"></i></a>
+                                    <li class="active"><a href="home.html">home<i class="fa fa-angle-down"></i></a>
                                         <!-- Home Version Dropdown Start -->
                                         <ul class="ht-dropdown">
-                                            <li><a href="index.html">Home Version 1</a></li>
+                                            <li><a href="home.html">Home Version 1</a></li>
                                             <li><a href="index-2.html">Home Version 2</a></li>
                                             <li><a href="index-3.html">Home Version 3</a></li>
                                             <li><a href="index-4.html">Home Version 4</a></li>
                                         </ul>
                                         <!-- Home Version Dropdown End -->
                                     </li>
-                                    <li><a href="shop.html">shop<i class="fa fa-angle-down"></i></a>
+                                    <li><a href="shopAdmin.html">shop<i class="fa fa-angle-down"></i></a>
                                         <!-- Home Version Dropdown Start -->
                                         <ul class="ht-dropdown dropdown-style-two">
                                             <li><a href="product.html">product details</a></li>
@@ -296,17 +306,17 @@
                             <div class="mobile-menu d-block d-lg-none">
                                 <nav>
                                     <ul>
-                                        <li><a href="index.html">home</a>
+                                        <li><a href="home.html">home</a>
                                             <!-- Home Version Dropdown Start -->
                                             <ul>
-                                                <li><a href="index.html">Home Version 1</a></li>
+                                                <li><a href="home.html">Home Version 1</a></li>
                                                 <li><a href="index-2.html">Home Version 2</a></li>
                                                 <li><a href="index-3.html">Home Version 3</a></li>
                                                 <li><a href="index-4.html">Home Version 4</a></li>
                                             </ul>
                                             <!-- Home Version Dropdown End -->
                                         </li>
-                                        <li><a href="shop.html">shop</a>
+                                        <li><a href="shopAdmin.html">shop</a>
                                             <!-- Mobile Menu Dropdown Start -->
                                             <ul>
                                                 <li><a href="product.html">product details</a></li>
@@ -355,62 +365,62 @@
                             <ul>
                                 <li class="has-sub"><a href="#">Automotive & Motorcycle </a>
                                     <ul class="category-sub">
-                                        <li class="has-sub"><a href="shop.html">Office chair</a>
+                                        <li class="has-sub"><a href="shopAdmin.html">Office chair</a>
                                             <ul class="category-sub">
-                                                <li><a href="shop.html">Bibendum Cursus</a></li>
-                                                <li><a href="shop.html">Dignissim Turpis</a></li>
-                                                <li><a href="shop.html">Dining room</a></li>
-                                                <li><a href="shop.html">Dining room</a></li>
+                                                <li><a href="shopAdmin.html">Bibendum Cursus</a></li>
+                                                <li><a href="shopAdmin.html">Dignissim Turpis</a></li>
+                                                <li><a href="shopAdmin.html">Dining room</a></li>
+                                                <li><a href="shopAdmin.html">Dining room</a></li>
                                             </ul>
                                         </li>
-                                        <li class="has-sub"><a href="shop.html">Purus Lacus</a>
+                                        <li class="has-sub"><a href="shopAdmin.html">Purus Lacus</a>
                                             <ul class="category-sub">
-                                                <li><a href="shop.html">Magna Pellentesq</a></li>
-                                                <li><a href="shop.html">Molestie Tortor</a></li>
-                                                <li><a href="shop.html">Vehicula Element</a></li>
-                                                <li><a href="shop.html">Sagittis Blandit</a></li>
+                                                <li><a href="shopAdmin.html">Magna Pellentesq</a></li>
+                                                <li><a href="shopAdmin.html">Molestie Tortor</a></li>
+                                                <li><a href="shopAdmin.html">Vehicula Element</a></li>
+                                                <li><a href="shopAdmin.html">Sagittis Blandit</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="shop.html">gps accessories</a></li>
-                                        <li><a href="shop.html">Microphones</a></li>
-                                        <li><a href="shop.html">Wireless Transmitters</a></li>
+                                        <li><a href="shopAdmin.html">gps accessories</a></li>
+                                        <li><a href="shopAdmin.html">Microphones</a></li>
+                                        <li><a href="shopAdmin.html">Wireless Transmitters</a></li>
                                     </ul>
                                     <!-- category submenu end-->
                                 </li>
                                 <li class="has-sub"><a href="#">Sports & Outdoors</a>
                                     <ul class="category-sub">
                                         <li class="menu-tile">Cameras</li>
-                                        <li><a href="shop.html">Cords and Cables</a></li>
-                                        <li><a href="shop.html">gps accessories</a></li>
-                                        <li><a href="shop.html">Microphones</a></li>
-                                        <li><a href="shop.html">Wireless Transmitters</a></li>
+                                        <li><a href="shopAdmin.html">Cords and Cables</a></li>
+                                        <li><a href="shopAdmin.html">gps accessories</a></li>
+                                        <li><a href="shopAdmin.html">Microphones</a></li>
+                                        <li><a href="shopAdmin.html">Wireless Transmitters</a></li>
                                     </ul>
                                     <!-- category submenu end-->
                                 </li>
                                 <li class="has-sub"><a href="#">Home & Kitchen</a>
                                     <ul class="category-sub">
-                                        <li><a href="shop.html">kithen one</a></li>
-                                        <li><a href="shop.html">kithen two</a></li>
-                                        <li><a href="shop.html">kithen three</a></li>
-                                        <li><a href="shop.html">kithen four</a></li>
+                                        <li><a href="shopAdmin.html">kithen one</a></li>
+                                        <li><a href="shopAdmin.html">kithen two</a></li>
+                                        <li><a href="shopAdmin.html">kithen three</a></li>
+                                        <li><a href="shopAdmin.html">kithen four</a></li>
                                     </ul>
                                     <!-- category submenu end-->
                                 </li>
                                 <li class="has-sub"><a href="#">Phones & Tablets</a>
                                     <ul class="category-sub">
-                                        <li><a href="shop.html">phone one</a></li>
-                                        <li><a href="shop.html">Tablet two</a></li>
-                                        <li><a href="shop.html">Tablet three</a></li>
-                                        <li><a href="shop.html">phone four</a></li>
+                                        <li><a href="shopAdmin.html">phone one</a></li>
+                                        <li><a href="shopAdmin.html">Tablet two</a></li>
+                                        <li><a href="shopAdmin.html">Tablet three</a></li>
+                                        <li><a href="shopAdmin.html">phone four</a></li>
                                     </ul>
                                     <!-- category submenu end-->
                                 </li>
                                 <li class="has-sub"><a href="#">TV & Video</a>
                                     <ul class="category-sub">
-                                        <li><a href="shop.html">smart tv</a></li>
-                                        <li><a href="shop.html">real video</a></li>
-                                        <li><a href="shop.html">Microphones</a></li>
-                                        <li><a href="shop.html">Wireless Transmitters</a></li>
+                                        <li><a href="shopAdmin.html">smart tv</a></li>
+                                        <li><a href="shopAdmin.html">real video</a></li>
+                                        <li><a href="shopAdmin.html">Microphones</a></li>
+                                        <li><a href="shopAdmin.html">Wireless Transmitters</a></li>
                                     </ul>
                                     <!-- category submenu end-->
                                 </li>
@@ -435,52 +445,52 @@
                         <div class="vertical-menu mb-all-30">
                             <nav>
                                 <ul class="vertical-menu-list">
-                                    <li class=""><a href="shop.html"><span><img src="img\vertical-menu\1.png" alt="menu-icon"></span>Automotive & Motorcycle<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    <li class=""><a href="shopAdmin.html"><span><img src="img\vertical-menu\1.png" alt="menu-icon"></span>Automotive & Motorcycle<i class="fa fa-angle-right" aria-hidden="true"></i></a>
 
                                         <ul class="ht-dropdown mega-child">
-                                            <li><a href="shop.html">Office chair <i class="fa fa-angle-right"></i></a>
+                                            <li><a href="shopAdmin.html">Office chair <i class="fa fa-angle-right"></i></a>
                                                  <!-- category submenu end-->
                                                 <ul class="ht-dropdown mega-child">
-                                                    <li><a href="shop.html">Bibendum Cursus</a></li>
-                                                    <li><a href="shop.html">Dignissim Turpis</a></li>
-                                                    <li><a href="shop.html">Dining room</a></li>
-                                                    <li><a href="shop.html">Dining room</a></li>
+                                                    <li><a href="shopAdmin.html">Bibendum Cursus</a></li>
+                                                    <li><a href="shopAdmin.html">Dignissim Turpis</a></li>
+                                                    <li><a href="shopAdmin.html">Dining room</a></li>
+                                                    <li><a href="shopAdmin.html">Dining room</a></li>
                                                 </ul>
                                                 <!-- category submenu end-->
                                             </li>
-                                            <li><a href="shop.html">Purus Lacus <i class="fa fa-angle-right"></i></a>
+                                            <li><a href="shopAdmin.html">Purus Lacus <i class="fa fa-angle-right"></i></a>
                                                  <!-- category submenu end-->
                                                 <ul class="ht-dropdown mega-child">
-                                                    <li><a href="shop.html">Magna Pellentesq</a></li>
-                                                    <li><a href="shop.html">Molestie Tortor</a></li>
-                                                    <li><a href="shop.html">Vehicula Element</a></li>
-                                                    <li><a href="shop.html">Sagittis Blandit</a></li>
+                                                    <li><a href="shopAdmin.html">Magna Pellentesq</a></li>
+                                                    <li><a href="shopAdmin.html">Molestie Tortor</a></li>
+                                                    <li><a href="shopAdmin.html">Vehicula Element</a></li>
+                                                    <li><a href="shopAdmin.html">Sagittis Blandit</a></li>
                                                 </ul>
                                                 <!-- category submenu end-->
                                             </li>                                            
-                                            <li><a href="shop.html">Sagittis Eget</a></li>
-                                            <li><a href="shop.html">Sagittis Eget</a></li>
+                                            <li><a href="shopAdmin.html">Sagittis Eget</a></li>
+                                            <li><a href="shopAdmin.html">Sagittis Eget</a></li>
                                         </ul>
                                         <!-- category submenu end-->
                                     </li>
-                                    <li><a href="shop.html"><span><img src="img\vertical-menu\3.png" alt="menu-icon"></span>Sports & Outdoors<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    <li><a href="shopAdmin.html"><span><img src="img\vertical-menu\3.png" alt="menu-icon"></span>Sports & Outdoors<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                         <!-- Vertical Mega-Menu Start -->
                                         <ul class="ht-dropdown megamenu first-megamenu">
                                             <!-- Single Column Start -->
                                             <li class="single-megamenu">
                                                 <ul>
                                                     <li class="menu-tile">Cameras</li>
-                                                    <li><a href="shop.html">Cords and Cables</a></li>
-                                                    <li><a href="shop.html">gps accessories</a></li>
-                                                    <li><a href="shop.html">Microphones</a></li>
-                                                    <li><a href="shop.html">Wireless Transmitters</a></li>
+                                                    <li><a href="shopAdmin.html">Cords and Cables</a></li>
+                                                    <li><a href="shopAdmin.html">gps accessories</a></li>
+                                                    <li><a href="shopAdmin.html">Microphones</a></li>
+                                                    <li><a href="shopAdmin.html">Wireless Transmitters</a></li>
                                                 </ul>
                                                 <ul>
                                                     <li class="menu-tile">GamePad</li>
-                                                    <li><a href="shop.html">real game hd</a></li>
-                                                    <li><a href="shop.html">fighting game</a></li>
-                                                    <li><a href="shop.html">racing pad</a></li>
-                                                    <li><a href="shop.html">puzzle pad</a></li>
+                                                    <li><a href="shopAdmin.html">real game hd</a></li>
+                                                    <li><a href="shopAdmin.html">fighting game</a></li>
+                                                    <li><a href="shopAdmin.html">racing pad</a></li>
+                                                    <li><a href="shopAdmin.html">puzzle pad</a></li>
                                                 </ul>
                                             </li>
                                             <!-- Single Column End -->
@@ -488,41 +498,41 @@
                                             <li class="single-megamenu">
                                                 <ul>
                                                     <li class="menu-tile">Digital Cameras</li>
-                                                    <li><a href="shop.html">Camera one</a></li>
-                                                    <li><a href="shop.html">Camera two</a></li>
-                                                    <li><a href="shop.html">Camera three</a></li>
-                                                    <li><a href="shop.html">Camera four</a></li>
+                                                    <li><a href="shopAdmin.html">Camera one</a></li>
+                                                    <li><a href="shopAdmin.html">Camera two</a></li>
+                                                    <li><a href="shopAdmin.html">Camera three</a></li>
+                                                    <li><a href="shopAdmin.html">Camera four</a></li>
                                                 </ul>
                                                 <ul>
                                                     <li class="menu-tile">Virtual Reality</li>
-                                                    <li><a href="shop.html">Reality one</a></li>
-                                                    <li><a href="shop.html">Reality two</a></li>
-                                                    <li><a href="shop.html">Reality three</a></li>
-                                                    <li><a href="shop.html">Reality four</a></li>
+                                                    <li><a href="shopAdmin.html">Reality one</a></li>
+                                                    <li><a href="shopAdmin.html">Reality two</a></li>
+                                                    <li><a href="shopAdmin.html">Reality three</a></li>
+                                                    <li><a href="shopAdmin.html">Reality four</a></li>
                                                 </ul>
                                             </li>
                                             <!-- Single Column End -->
                                             <!-- Single Megamenu Image Start -->
                                             <li class="megamenu-img">
-                                                <a href="shop.html"><img src="img\vertical-menu\sub-img1.jpg" alt="menu-image"></a>
-                                                <a href="shop.html"><img src="img\vertical-menu\sub-img2.jpg" alt="menu-image"></a>
-                                                <a href="shop.html"><img src="img\vertical-menu\sub-img3.jpg" alt="menu-image"></a>
+                                                <a href="shopAdmin.html"><img src="img\vertical-menu\sub-img1.jpg" alt="menu-image"></a>
+                                                <a href="shopAdmin.html"><img src="img\vertical-menu\sub-img2.jpg" alt="menu-image"></a>
+                                                <a href="shopAdmin.html"><img src="img\vertical-menu\sub-img3.jpg" alt="menu-image"></a>
                                             </li>
                                             <!-- Single Megamenu Image End -->
                                         </ul>
                                         <!-- Vertical Mega-Menu End -->
                                     </li>
-                                    <li><a href="shop.html"><span><img src="img\vertical-menu\6.png" alt="menu-icon"></span>Fashion<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    <li><a href="shopAdmin.html"><span><img src="img\vertical-menu\6.png" alt="menu-icon"></span>Fashion<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                         <!-- Vertical Mega-Menu Start -->
                                         <ul class="ht-dropdown megamenu megamenu-two">
                                             <!-- Single Column Start -->
                                             <li class="single-megamenu">
                                                 <ul>
                                                     <li class="menu-tile">Men’s Fashion</li>
-                                                    <li><a href="shop.html">Blazers</a></li>
-                                                    <li><a href="shop.html">Boots</a></li>
-                                                    <li><a href="shop.html">pants</a></li>
-                                                    <li><a href="shop.html">Tops & Tees</a></li>
+                                                    <li><a href="shopAdmin.html">Blazers</a></li>
+                                                    <li><a href="shopAdmin.html">Boots</a></li>
+                                                    <li><a href="shopAdmin.html">pants</a></li>
+                                                    <li><a href="shopAdmin.html">Tops & Tees</a></li>
                                                 </ul>
                                             </li>
                                             <!-- Single Column End -->
@@ -530,27 +540,27 @@
                                             <li class="single-megamenu">
                                                 <ul>
                                                     <li class="menu-tile">Women’s Fashion</li>
-                                                    <li><a href="shop.html">Bags</a></li>
-                                                    <li><a href="shop.html">Bottoms</a></li>
-                                                    <li><a href="shop.html">Shirts</a></li>
-                                                    <li><a href="shop.html">Tailored</a></li>
+                                                    <li><a href="shopAdmin.html">Bags</a></li>
+                                                    <li><a href="shopAdmin.html">Bottoms</a></li>
+                                                    <li><a href="shopAdmin.html">Shirts</a></li>
+                                                    <li><a href="shopAdmin.html">Tailored</a></li>
                                                 </ul>
                                             </li>
                                             <!-- Single Column End -->
                                         </ul>
                                         <!-- Vertical Mega-Menu End -->
                                     </li>
-                                    <li><a href="shop.html"><span><img src="img\vertical-menu\7.png" alt="menu-icon"></span>Home & Kitchen<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    <li><a href="shopAdmin.html"><span><img src="img\vertical-menu\7.png" alt="menu-icon"></span>Home & Kitchen<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                         <!-- Vertical Mega-Menu Start -->
                                         <ul class="ht-dropdown megamenu megamenu-two">
                                             <!-- Single Column Start -->
                                             <li class="single-megamenu">
                                                 <ul>
                                                     <li class="menu-tile">Large Appliances</li>
-                                                    <li><a href="shop.html">Armchairs</a></li>
-                                                    <li><a href="shop.html">Bunk Bed</a></li>
-                                                    <li><a href="shop.html">Mattress</a></li>
-                                                    <li><a href="shop.html">Sideboard</a></li>
+                                                    <li><a href="shopAdmin.html">Armchairs</a></li>
+                                                    <li><a href="shopAdmin.html">Bunk Bed</a></li>
+                                                    <li><a href="shopAdmin.html">Mattress</a></li>
+                                                    <li><a href="shopAdmin.html">Sideboard</a></li>
                                                 </ul>
                                             </li>
                                             <!-- Single Column End -->
@@ -558,17 +568,17 @@
                                             <li class="single-megamenu">
                                                 <ul>
                                                     <li class="menu-tile">Small Appliances</li>
-                                                    <li><a href="shop.html">Bootees Bags</a></li>
-                                                    <li><a href="shop.html">Jackets</a></li>
-                                                    <li><a href="shop.html">Shelf</a></li>
-                                                    <li><a href="shop.html">Shoes</a></li>
+                                                    <li><a href="shopAdmin.html">Bootees Bags</a></li>
+                                                    <li><a href="shopAdmin.html">Jackets</a></li>
+                                                    <li><a href="shopAdmin.html">Shelf</a></li>
+                                                    <li><a href="shopAdmin.html">Shoes</a></li>
                                                 </ul>
                                             </li>
                                             <!-- Single Column End -->
                                         </ul>
                                         <!-- Vertical Mega-Menu End --> 
                                     </li>
-                                    <li><a href="shop.html"><span><img src="img\vertical-menu\4.png" alt="menu-icon"></span>Phones & Tablets<i class="fa fa-angle-right" aria-hidden="true"></i>
+                                    <li><a href="shopAdmin.html"><span><img src="img\vertical-menu\4.png" alt="menu-icon"></span>Phones & Tablets<i class="fa fa-angle-right" aria-hidden="true"></i>
                                     </a>
                                         <!-- Vertical Mega-Menu Start -->
                                         <ul class="ht-dropdown megamenu megamenu-two">
@@ -576,10 +586,10 @@
                                             <li class="single-megamenu">
                                                 <ul>
                                                     <li class="menu-tile">Tablet</li>
-                                                    <li><a href="shop.html">tablet one</a></li>
-                                                    <li><a href="shop.html">tablet two</a></li>
-                                                    <li><a href="shop.html">tablet three</a></li>
-                                                    <li><a href="shop.html">tablet four</a></li>
+                                                    <li><a href="shopAdmin.html">tablet one</a></li>
+                                                    <li><a href="shopAdmin.html">tablet two</a></li>
+                                                    <li><a href="shopAdmin.html">tablet three</a></li>
+                                                    <li><a href="shopAdmin.html">tablet four</a></li>
                                                 </ul>
                                             </li>
                                             <!-- Single Column End -->
@@ -587,27 +597,27 @@
                                             <li class="single-megamenu">
                                                 <ul>
                                                     <li class="menu-tile">Smartphone</li>
-                                                    <li><a href="shop.html">phone one</a></li>
-                                                    <li><a href="shop.html">phone two</a></li>
-                                                    <li><a href="shop.html">phone three</a></li>
-                                                    <li><a href="shop.html">phone four</a></li>
+                                                    <li><a href="shopAdmin.html">phone one</a></li>
+                                                    <li><a href="shopAdmin.html">phone two</a></li>
+                                                    <li><a href="shopAdmin.html">phone three</a></li>
+                                                    <li><a href="shopAdmin.html">phone four</a></li>
                                                 </ul>
                                             </li>
                                             <!-- Single Column End -->
                                         </ul>
                                         <!-- Vertical Mega-Menu End -->
                                     </li>
-                                    <li><a href="shop.html"><span><img src="img\vertical-menu\6.png" alt="menu-icon"></span>TV & Video<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    <li><a href="shopAdmin.html"><span><img src="img\vertical-menu\6.png" alt="menu-icon"></span>TV & Video<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                         <!-- Vertical Mega-Menu Start -->
                                         <ul class="ht-dropdown megamenu megamenu-two">
                                             <!-- Single Column Start -->
                                             <li class="single-megamenu">
                                                 <ul>
                                                     <li class="menu-tile">Gaming Desktops</li>
-                                                    <li><a href="shop.html">Alpha Desktop</a></li>
-                                                    <li><a href="shop.html">rober Desktop</a></li>
-                                                    <li><a href="shop.html">Ultra Desktop </a></li>
-                                                    <li><a href="shop.html">beta desktop</a></li>
+                                                    <li><a href="shopAdmin.html">Alpha Desktop</a></li>
+                                                    <li><a href="shopAdmin.html">rober Desktop</a></li>
+                                                    <li><a href="shopAdmin.html">Ultra Desktop </a></li>
+                                                    <li><a href="shopAdmin.html">beta desktop</a></li>
                                                 </ul>
                                             </li>
                                             <!-- Single Column End -->
@@ -615,27 +625,27 @@
                                             <li class="single-megamenu">
                                                 <ul>
                                                     <li class="menu-tile">Women’s Fashion</li>
-                                                    <li><a href="shop.html">3D-Capable</a></li>
-                                                    <li><a href="shop.html">Clearance</a></li>
-                                                    <li><a href="shop.html">Free Shipping Eligible</a></li>
-                                                    <li><a href="shop.html">On Sale</a></li>
+                                                    <li><a href="shopAdmin.html">3D-Capable</a></li>
+                                                    <li><a href="shopAdmin.html">Clearance</a></li>
+                                                    <li><a href="shopAdmin.html">Free Shipping Eligible</a></li>
+                                                    <li><a href="shopAdmin.html">On Sale</a></li>
                                                 </ul>
                                             </li>
                                             <!-- Single Column End -->
                                         </ul>
                                         <!-- Vertical Mega-Menu End -->
                                     </li>
-                                     <li><a href="shop.html"><span><img src="img\vertical-menu\5.png" alt="menu-icon"></span>Beauty</a>
+                                     <li><a href="shopAdmin.html"><span><img src="img\vertical-menu\5.png" alt="menu-icon"></span>Beauty</a>
                                     </li>
-                                    <li><a href="shop.html"><span><img src="img\vertical-menu\8.png" alt="menu-icon"></span>Fruits & Veggies</a></li>
-                                    <li><a href="shop.html"><span><img src="img\vertical-menu\9.png" alt="menu-icon"></span>Computer & Laptop</a></li>
-                                    <li><a href="shop.html"><span><img src="img\vertical-menu\10.png" alt="menu-icon"></span>Meat & Seafood</a></li>
+                                    <li><a href="shopAdmin.html"><span><img src="img\vertical-menu\8.png" alt="menu-icon"></span>Fruits & Veggies</a></li>
+                                    <li><a href="shopAdmin.html"><span><img src="img\vertical-menu\9.png" alt="menu-icon"></span>Computer & Laptop</a></li>
+                                    <li><a href="shopAdmin.html"><span><img src="img\vertical-menu\10.png" alt="menu-icon"></span>Meat & Seafood</a></li>
                                     <!-- More Categoies Start -->
                                     <li id="cate-toggle" class="category-menu v-cat-menu">
                                         <ul>
                                             <li class="has-sub"><a href="#">More Categories</a>
                                                 <ul class="category-sub">
-                                                    <li><a href="shop.html"><span><img src="img\vertical-menu\11.png" alt="menu-icon"></span>Accessories</a></li>
+                                                    <li><a href="shopAdmin.html"><span><img src="img\vertical-menu\11.png" alt="menu-icon"></span>Accessories</a></li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -657,7 +667,7 @@
             <div class="container">
                 <div class="breadcrumb">
                     <ul class="d-flex align-items-center">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="home.html">Home</a></li>
                         <li class="active"><a href="blog">Blog</a></li>
                     </ul>
                 </div>
@@ -667,509 +677,47 @@
         <!-- Breadcrumb End -->
         <!-- Blog Page Start Here -->
         <div class="blog ptb-100  ptb-sm-60">
-            <div class="container">
-                <div class="main-blog">
-                    <div class="row">
-                        <!-- Single Blog Start -->
-                        <div class="col-lg-6 col-sm-12">
-                           <div class="single-latest-blog">
-                               <div class="blog-img">
-                                   <a href="single-blog.html"><img src="img\blog\1.jpg" alt="blog-image"></a>
-                               </div>
-                               <div class="blog-desc">
-                                   <h4><a href="single-blog.html">At wisi enim ad minim veniam.</a></h4>
-                                    <ul class="meta-box d-flex">
-                                        <li><a href="#">By Truemart</a></li>
-                                    </ul>
-                                    <p>Aenean vestibulum pretium enim vitae , non commodo urna volutpat . Pellentesque vel lacus  eget est d...</p>
-                                    <a class="readmore" href="single-blog.html">Read More</a>
-                               </div>
-                               <div class="blog-date">
-                                    <span>28</span>
-                                    June
-                                </div>
-                           </div>
-                        </div>
-                        <!-- Single Blog End -->
-                        <!-- Single Blog Start -->
-                        <div class="col-lg-6 col-sm-12">
-                           <div class="single-latest-blog">
-                               <div class="blog-img">
-                                   <a href="single-blog.html"><img src="img\blog\2.jpg" alt="blog-image"></a>
-                               </div>
-                               <div class="blog-desc">
-                                   <h4><a href="single-blog.html">Dt wisi enim ad minim veniam..</a></h4>
-                                    <ul class="meta-box d-flex">
-                                        <li><a href="#">By Truemart</a></li>
-                                    </ul>
-                                    <p>Aenean vestibulum pretium enim vitae , non commodo urna volutpat . Pellentesque vel lacus  eget est d...</p>
-                                    <a class="readmore" href="single-blog.html">Read More</a>
-                               </div>
-                               <div class="blog-date">
-                                    <span>26</span>
-                                    Oct
-                                </div>
-                           </div>
-                        </div>
-                        <!-- Single Blog End -->
-                        <!-- Single Blog Start -->
-                        <div class="col-lg-6 col-sm-12">
-                           <div class="single-latest-blog">
-                               <div class="blog-img">
-                                   <a href="single-blog.html"><img src="img\blog\2.jpg" alt="blog-image"></a>
-                               </div>
-                               <div class="blog-desc">
-                                   <h4><a href="single-blog.html">At wisi enim ad minim veniam.</a></h4>
-                                    <ul class="meta-box d-flex">
-                                        <li><a href="#">By Truemart</a></li>
-                                    </ul>
-                                    <p>Aenean vestibulum pretium enim vitae , non commodo urna volutpat . Pellentesque vel lacus  eget est d...</p>
-                                    <a class="readmore" href="single-blog.html">Read More</a>
-                               </div>
-                               <div class="blog-date">
-                                    <span>18</span>
-                                    Jan
-                                </div>
-                           </div>
-                        </div>
-                        <!-- Single Blog End -->
-                        <!-- Single Blog Start -->
-                        <div class="col-lg-6 col-sm-12">
-                           <div class="single-latest-blog">
-                               <div class="blog-img">
-                                   <a href="single-blog.html"><img src="img\blog\1.jpg" alt="blog-image"></a>
-                               </div>
-                               <div class="blog-desc">
-                                   <h4><a href="single-blog.html">Dt wisi enim ad minim veniam..</a></h4>
-                                    <ul class="meta-box d-flex">
-                                        <li><a href="#">By Truemart</a></li>
-                                    </ul>
-                                    <p>Aenean vestibulum pretium enim vitae , non commodo urna volutpat . Pellentesque vel lacus  eget est d...</p>
-                                    <a class="readmore" href="single-blog.html">Read More</a>
-                               </div>
-                               <div class="blog-date">
-                                    <span>21</span>
-                                    Feb
-                                </div>
-                           </div>
-                        </div>
-                        <!-- Single Blog End -->
-                        <!-- Single Blog Start -->
-                        <div class="col-lg-6 col-sm-12">
-                           <div class="single-latest-blog">
-                               <div class="blog-img">
-                                   <a href="single-blog.html"><img src="img\blog\1.jpg" alt="blog-image"></a>
-                               </div>
-                               <div class="blog-desc">
-                                   <h4><a href="single-blog.html">At wisi enim ad minim veniam.</a></h4>
-                                    <ul class="meta-box d-flex">
-                                        <li><a href="#">By Truemart</a></li>
-                                    </ul>
-                                    <p>Aenean vestibulum pretium enim vitae , non commodo urna volutpat . Pellentesque vel lacus  eget est d...</p>
-                                    <a class="readmore" href="single-blog.html">Read More</a>
-                               </div>
-                               <div class="blog-date">
-                                    <span>19</span>
-                                    Sep
-                                </div>
-                           </div>
-                        </div>
-                        <!-- Single Blog End -->
-                        <!-- Single Blog Start -->
-                        <div class="col-lg-6 col-sm-12">
-                           <div class="single-latest-blog">
-                               <div class="blog-img">
-                                   <a href="single-blog.html"><img src="img\blog\2.jpg" alt="blog-image"></a>
-                               </div>
-                               <div class="blog-desc">
-                                   <h4><a href="single-blog.html">Dt wisi enim ad minim veniam..</a></h4>
-                                    <ul class="meta-box d-flex">
-                                        <li><a href="#">By Truemart</a></li>
-                                    </ul>
-                                    <p>Aenean vestibulum pretium enim vitae , non commodo urna volutpat . Pellentesque vel lacus  eget est d...</p>
-                                    <a class="readmore" href="single-blog.html">Read More</a>
-                               </div>
-                               <div class="blog-date">
-                                    <span>28</span>
-                                    June
-                                </div>
-                           </div>
-                        </div>
-                        <!-- Single Blog End -->
-                        <!-- Single Blog Start -->
-                        <div class="col-lg-6 col-sm-12">
-                           <div class="single-latest-blog">
-                               <div class="blog-img">
-                                   <a href="single-blog.html"><img src="img\blog\2.jpg" alt="blog-image"></a>
-                               </div>
-                               <div class="blog-desc">
-                                   <h4><a href="single-blog.html">At wisi enim ad minim veniam.</a></h4>
-                                    <ul class="meta-box d-flex">
-                                        <li><a href="#">By Truemart</a></li>
-                                    </ul>
-                                    <p>Aenean vestibulum pretium enim vitae , non commodo urna volutpat . Pellentesque vel lacus  eget est d...</p>
-                                    <a class="readmore" href="single-blog.html">Read More</a>
-                               </div>
-                               <div class="blog-date">
-                                    <span>25</span>
-                                    Mar
-                                </div>
-                           </div>
-                        </div>
-                        <!-- Single Blog End -->
-                        <!-- Single Blog Start -->
-                        <div class="col-lg-6 col-sm-12">
-                           <div class="single-latest-blog">
-                               <div class="blog-img">
-                                   <a href="single-blog.html"><img src="img\blog\1.jpg" alt="blog-image"></a>
-                               </div>
-                               <div class="blog-desc">
-                                   <h4><a href="single-blog.html">Dt wisi enim ad minim veniam..</a></h4>
-                                    <ul class="meta-box d-flex">
-                                        <li><a href="#">By Truemart</a></li>
-                                    </ul>
-                                    <p>Aenean vestibulum pretium enim vitae , non commodo urna volutpat . Pellentesque vel lacus  eget est d...</p>
-                                    <a class="readmore" href="single-blog.html">Read More</a>
-                               </div>
-                               <div class="blog-date">
-                                    <span>14</span>
-                                    Aug
-                                </div>
-                           </div>
-                        </div>
-                        <!-- Single Blog End -->
+<!--            socket-->
+            <div id="main-content" class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <label for="connect">Connection:</label>
+                                <button id="connect" class="btn btn-default" type="submit">Connect</button>
+                                <button id="disconnect" class="btn btn-default" type="submit" disabled="disabl ed">Disconnect
+                                </button>
+                            </div>
+                        </form>
                     </div>
-                    <!-- Row End -->
-                    <div class="row">
-                        <div class="col-sm-12">
-                                <div class="pro-pagination">
-                                    <ul class="blog-pagination">
-                                        <li class="active"><a href="#">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                                    </ul>                                    
-                                    <div class="product-pagination">
-                                        <span class="grid-item-list">Showing 1 to 12 of 51 (5 Pages)</span>
-                                    </div>
-                                </div>
-                                <!-- Product Pagination Info -->
-                        </div>
-                    </div>
-                    <!-- Row End -->
-                </div>
-            </div>
-            <!-- Container End -->
-        </div>
-        <!-- Blog Page End Here -->
-        <!-- Support Area Start Here -->
-        <div class="support-area bdr-top">
-            <div class="container">
-                <div class="d-flex flex-wrap text-center">
-                    <div class="single-support">
-                        <div class="support-icon">
-                            <i class="lnr lnr-gift"></i>
-                        </div>
-                        <div class="support-desc">
-                            <h6>Great Value</h6>
-                            <span>Nunc id ante quis tellus faucibus dictum in eget.</span>
-                        </div>
-                    </div>
-                    <div class="single-support">
-                        <div class="support-icon">
-                            <i class="lnr lnr-rocket"></i>
-                        </div>
-                        <div class="support-desc">
-                            <h6>Worlwide Delivery</h6>
-                            <span>Quisque posuere enim augue, in rhoncus diam dictum non</span>
-                        </div>
-                    </div>
-                    <div class="single-support">
-                        <div class="support-icon">
-                           <i class="lnr lnr-lock"></i>
-                        </div>
-                        <div class="support-desc">
-                            <h6>Safe Payment</h6>
-                            <span>Duis suscipit elit sem, sed mattis tellus accumsan.</span>
-                        </div>
-                    </div>
-                    <div class="single-support">
-                        <div class="support-icon">
-                           <i class="lnr lnr-enter-down"></i>
-                        </div>
-                        <div class="support-desc">
-                            <h6>Shop Confidence</h6>
-                            <span>Faucibus dictum suscipit eget metus. Duis  elit sem, sed.</span>
-                        </div>
-                    </div>
-                    <div class="single-support">
-                        <div class="support-icon">
-                           <i class="lnr lnr-users"></i>
-                        </div>
-                        <div class="support-desc">
-                            <h6>24/7 Help Center</h6>
-                            <span>Quisque posuere enim augue, in rhoncus diam dictum non.</span>
-                        </div>
+                    <div class="col-md-6">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <label for="name">Nhập tin nhắn vào?</label>
+                                <input type="text" id="name" class="form-control" placeholder="Your name here...">
+                            </div>
+                            <button id="send" class="btn btn-default" type="submit">Gửi</button>
+                        </form>
                     </div>
                 </div>
-            </div>
-            <!-- Container End -->
-        </div>
-        <!-- Support Area End Here -->
-        <!-- Footer Area Start Here -->
-        <footer class="off-white-bg2 pt-95 bdr-top pt-sm-55">
-            <!-- Footer Top Start -->
-            <div class="footer-top">
-                <div class="container">
-                    <!-- Signup Newsletter Start -->
-                    <div class="row mb-60">
-                         <div class="col-xl-7 col-lg-7 ml-auto mr-auto col-md-8">
-                            <div class="news-desc text-center mb-30">
-                                 <h3>Sign Up For Newsletters</h3>
-                                 <p>Be the First to Know. Sign up for newsletter today</p>
-                             </div>
-                             <div class="newsletter-box">
-                                 <form action="#">
-                                      <input class="subscribe" placeholder="your email address" name="email" id="subscribe" type="text">
-                                      <button type="submit" class="submit">subscribe!</button>
-                                 </form>
-                             </div>
-                         </div>
-                    </div> 
-                    <!-- Signup-Newsletter End -->                   
-                    <div class="row">
-                        <!-- Single Footer Start -->
-                        <div class="col-lg-2 col-md-4 col-sm-6">
-                            <div class="single-footer mb-sm-40">
-                                <h3 class="footer-title">Information</h3>
-                                <div class="footer-content">
-                                    <ul class="footer-list">
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="#">Delivery Information</a></li>
-                                        <li><a href="#">Privacy Policy</a></li>
-                                        <li><a href="contact.html">Terms & Conditions</a></li>
-                                        <li><a href="login.html">FAQs</a></li>
-                                        <li><a href="login.html">Return Policy</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Footer Start -->
-                        <!-- Single Footer Start -->
-                        <div class="col-lg-2 col-md-4 col-sm-6">
-                            <div class="single-footer mb-sm-40">
-                                <h3 class="footer-title">Customer Service</h3>
-                                <div class="footer-content">
-                                    <ul class="footer-list">
-                                        <li><a href="contact.html">Contact Us</a></li>
-                                        <li><a href="#">Returns</a></li>
-                                        <li><a href="#">Order History</a></li>
-                                        <li><a href="wishlist.html">Wish List</a></li>
-                                        <li><a href="#">Site Map</a></li>
-                                        <li><a href="#">Gift Certificates</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Footer Start -->
-                        <!-- Single Footer Start -->
-                        <div class="col-lg-2 col-md-4 col-sm-6">
-                            <div class="single-footer mb-sm-40">
-                                <h3 class="footer-title">Extras</h3>
-                                <div class="footer-content">
-                                    <ul class="footer-list">
-                                        <li><a href="#">Newsletter</a></li>
-                                        <li><a href="#">Brands</a></li>
-                                        <li><a href="#">Gift Certificates</a></li>
-                                        <li><a href="#">Affiliate</a></li>
-                                        <li><a href="#">Specials</a></li>
-                                        <li><a href="#">Site Map</a></li>      
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Footer Start -->
-                        <!-- Single Footer Start -->
-                        <div class="col-lg-2 col-md-4 col-sm-6">
-                            <div class="single-footer mb-sm-40">
-                                <h3 class="footer-title">My Account</h3>
-                                <div class="footer-content">
-                                    <ul class="footer-list">
-                                        <li><a href="contact.html">Contact Us</a></li>
-                                        <li><a href="#">Returns</a></li>
-                                        <li><a href="#">My Account</a></li>
-                                        <li><a href="#">Order History</a></li>
-                                        <li><a href="wishlist.html">Wish List</a></li>
-                                        <li><a href="#">Newsletter</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Footer Start -->
-                        <!-- Single Footer Start -->
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="single-footer mb-sm-40">
-                                <h3 class="footer-title">My Account</h3>
-                                <div class="footer-content">
-                                    <ul class="footer-list address-content">
-                                        <li><i class="lnr lnr-map-marker"></i> Address: 169-C, Technohub, Dubai Silicon Oasis.</li>
-                                        <li><i class="lnr lnr-envelope"></i><a href="#"> mail Us: Support@truemart.com </a></li>
-                                        <li>
-                                            <i class="lnr lnr-phone-handset"></i> Phone: (+800) 123 456 789)
-                                        </li>
-                                    </ul>
-                                    <div class="payment mt-25 bdr-top pt-30">
-                                        <a href="#"><img class="img" src="img\payment\1.png" alt="payment-image"></a>
-                                    </div>                                   
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Footer Start -->
-                    </div>
-                    <!-- Row End -->
-                </div>
-                <!-- Container End -->
-            </div>
-            <!-- Footer Top End -->
-            <!-- Footer Middle Start -->
-            <div class="footer-middle text-center">
-                <div class="container">
-                    <div class="footer-middle-content pt-20 pb-30">
-                            <ul class="social-footer">
-                                <li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="https://plus.google.com/"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#"><img src="img\icon\social-img1.png" alt="google play"></a></li>
-                                <li><a href="#"><img src="img\icon\social-img2.png" alt="app store"></a></li>
-                            </ul>
-                    </div>
-                </div>
-                <!-- Container End -->
-            </div>
-            <!-- Footer Middle End -->
-            <!-- Footer Bottom Start -->
-            <div class="footer-bottom pb-30">
-                <div class="container">
-
-                     <div class="copyright-text text-center">                    
-                        <p>Copyright © 2018 <a target="_blank" href="#">Truemart</a> All Rights Reserved.</p>
-                     </div>
-                </div>
-                <!-- Container End -->
-            </div>
-            <!-- Footer Bottom End -->
-        </footer>
-        <!-- Footer Area End Here -->
-        <!-- Quick View Content Start -->
-        <div class="main-product-thumbnail quick-thumb-content">
-            <div class="container">
-                <!-- The Modal -->
-                <div class="modal fade" id="myModal">
-                    <div class="modal-dialog modal-lg modal-dialog-centered">
-                        <div class="modal-content">
-                            <!-- Modal Header -->
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-                            <!-- Modal body -->
-                            <div class="modal-body">
-                                <div class="row">
-                                    <!-- Main Thumbnail Image Start -->
-                                    <div class="col-lg-5 col-md-6 col-sm-5">
-                                        <!-- Thumbnail Large Image start -->
-                                        <div class="tab-content">
-                                            <div id="thumb-1" class="tab-pane fade show active">
-                                                <a data-fancybox="images" href="img\products\35.jpg"><img src="img\products\35.jpg" alt="product-view"></a>
-                                            </div>
-                                            <div id="thumb-2" class="tab-pane fade">
-                                                <a data-fancybox="images" href="img\products\13.jpg"><img src="img\products\13.jpg" alt="product-view"></a>
-                                            </div>
-                                            <div id="thumb-3" class="tab-pane fade">
-                                                <a data-fancybox="images" href="img\products\15.jpg"><img src="img\products\15.jpg" alt="product-view"></a>
-                                            </div>
-                                            <div id="thumb-4" class="tab-pane fade">
-                                                <a data-fancybox="images" href="img\products\4.jpg"><img src="img\products\4.jpg" alt="product-view"></a>
-                                            </div>
-                                            <div id="thumb-5" class="tab-pane fade">
-                                                <a data-fancybox="images" href="img\products\5.jpg"><img src="img\products\5.jpg" alt="product-view"></a>
-                                            </div>
-                                        </div>
-                                        <!-- Thumbnail Large Image End -->
-                                        <!-- Thumbnail Image End -->
-                                        <div class="product-thumbnail mt-20">
-                                            <div class="thumb-menu owl-carousel nav tabs-area" role="tablist">
-                                                <a class="active" data-toggle="tab" href="#thumb-1"><img src="img\products\35.jpg" alt="product-thumbnail"></a>
-                                                <a data-toggle="tab" href="#thumb-2"><img src="img\products\13.jpg" alt="product-thumbnail"></a>
-                                                <a data-toggle="tab" href="#thumb-3"><img src="img\products\15.jpg" alt="product-thumbnail"></a>
-                                                <a data-toggle="tab" href="#thumb-4"><img src="img\products\4.jpg" alt="product-thumbnail"></a>
-                                                <a data-toggle="tab" href="#thumb-5"><img src="img\products\5.jpg" alt="product-thumbnail"></a>
-                                            </div>
-                                        </div>
-                                        <!-- Thumbnail image end -->
-                                    </div>
-                                    <!-- Main Thumbnail Image End -->
-                                    <!-- Thumbnail Description Start -->
-                                    <div class="col-lg-7 col-md-6 col-sm-7">
-                                        <div class="thubnail-desc fix mt-sm-40">
-                                            <h3 class="product-header">Printed Summer Dress</h3>
-                                            <div class="pro-price mtb-30">
-                                                <p class="d-flex align-items-center"><span class="prev-price">16.51</span><span class="price">$15.19</span><span class="saving-price">save 8%</span></p>
-                                            </div>
-                                            <p class="mb-20 pro-desc-details">Long printed dress with thin adjustable straps. V-neckline and wiring under the bust with ruffles at the bottom of the dress.</p>
-                                            <div class="product-size mb-20 clearfix">
-                                                <label>Size</label>
-                                                <select class="">
-                                                    <option>S</option>
-                                                    <option>M</option>
-                                                    <option>L</option>
-                                                </select>
-                                            </div>
-                                            <div class="color mb-20">
-                                                <label>color</label>
-                                                <ul class="color-list">
-                                                    <li>
-                                                        <a class="orange active" href="#"></a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="paste" href="#"></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="box-quantity d-flex">
-                                                <form action="#">
-                                                    <input class="quantity mr-40" type="number" min="1" value="1">
-                                                </form>
-                                                <a class="add-cart" href="cart.html">add to cart</a>
-                                            </div>
-                                            <div class="pro-ref mt-15">
-                                                <p><span class="in-stock"><i class="ion-checkmark-round"></i> IN STOCK</span></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Thumbnail Description End -->
-                                </div>
-                            </div>
-                            <!-- Modal footer -->
-                            <div class="custom-footer">
-                                <div class="socila-sharing">
-                                    <ul class="d-flex">
-                                        <li>share</li>
-                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-google-plus-official" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table id="conversation" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>Greetings</th>
+                            </tr>
+                            </thead>
+                            <tbody id="greetings">
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Quick View Content End -->
     </div>
-    <!-- Main Wrapper End Here -->
+
+
 
     <!-- jquery 3.2.1 -->
     <script src="js\vendor\jquery-3.2.1.min.js"></script>
@@ -1197,5 +745,8 @@
     <script src="js\plugins.js"></script>
     <!-- Main activaion js -->
     <script src="js\main.js"></script>
+    <script src="/js/ajax/star.js"></script>
+    <script src="/js/ajax/comment.js"></script>
+    <script src="js/login,register/login.js"></script>
 </body>
 </html>

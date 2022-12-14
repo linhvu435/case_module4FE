@@ -2,8 +2,11 @@
 
 function saveStar(star){
 
+    let id = localStorage.getItem("id_user")
+
     let countStar = {
-        "number_star": star
+        id_account: id,
+        number_star: star
 
     }
 
@@ -11,14 +14,13 @@ function saveStar(star){
         type: "POST",
 
         url: "http://localhost:8080/stars",
-        headers: {
+        headers: {"Authorization": "Bearer " + localStorage.getItem('token'),
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
+            'Content-Type': 'application/json' },
         data: JSON.stringify(countStar),
         success: function () {
 
-            alert("succesfully star")
+            alert("successfully star")
             let hidden = document.querySelector('#stars')
             hidden.style.visibility = 'hidden'
         },
