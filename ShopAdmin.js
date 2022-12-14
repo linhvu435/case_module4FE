@@ -207,7 +207,7 @@ function create() {
         data: JSON.stringify(product),
         //xử lý khi thành công
         success: function (data) {
-            show()
+            showData()
 
         },
         error: function (err) {

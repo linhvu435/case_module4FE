@@ -141,13 +141,14 @@ class Product {
     name;
     img;
     price;
+    amount;
 
-
-    constructor(id,name,img,price) {
+    constructor(id,name,img,price,amount) {
         this.id = id;
         this.name = name;
         this.img = img;
         this.price = price;
+        this.amount = amount;
 
     }
 }
@@ -155,26 +156,27 @@ class Product {
 // let ProductList = JSON.parse(localStorage.getItem("ProductList"));
 let ProductList = []
 function putInCart(id,name,img,price){
-    let buy = new Product(id,name,img,price)
+
+    let buy = new Product(id,name,img,price,1)
     ProductList.push(buy);
     console.log(ProductList)
     localStorage.setItem("ProductList",JSON.stringify(ProductList))
 }
 
 
-function buyProduct(){
-
-    $.ajax({
-        type: "POST",
-        url: "http://localhost:8080/products",
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        data: JSON.stringify(ProductList),
-        success: function () {
-
-        }
-    });
-
-}
+// function buyProduct(){
+//
+//     $.ajax({
+//         type: "POST",
+//         url: "http://localhost:8080/products",
+//         headers: {
+//             'Accept': 'application/json',
+//             'Content-Type': 'application/json'
+//         },
+//         data: JSON.stringify(ProductList),
+//         success: function () {
+//
+//         }
+//     });
+//
+// }
